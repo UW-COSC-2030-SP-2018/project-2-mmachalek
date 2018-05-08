@@ -9,10 +9,13 @@
 #include<algorithm>
 #include<iostream>
 #include<cstdlib>
+#include<string>
 using std::swap;
 using std::vector;
 using std::cout;
 using std::endl;
+using std::string;
+
 
 
 // partition for quickSort
@@ -217,5 +220,33 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 		}
 	}
 	return -9999;
+}
+
+// a hash 
+//referenced:
+	// location: http://www.cse.yorku.ca/~oz/hash.html
+	// // // // // // // // // // // // // // // // // 
+	// location: https://stackoverflow.com/questions/2535284/how-can-i-hash-a-string-to-an-int-using-c
+	// author: Alex Martelli && deepmax
+	// date published: March 29, 2010 && Nov 5, 2012
+unsigned long aHash(string toHash)
+{
+	// initialize prime hash val
+	unsigned long hash = 5381;
+	// set offset 
+	unsigned long offset = 'a' - 1;
+	
+	for(string::const_iterator it = toHash.begin(); it != toHash.end(); ++it)
+	{
+		// bitshift to left by 5, add hash then bitwise OR the result 
+		// with the current string val - offset.
+		hash = ((hash << 5) + hash) | (*it - offset);
+
+		// collides if 2 strings have same letters in different order:
+		// hash = ((hash << 5) + hash) + offset;
+	}
+	// todo: get a big old hash from the darn string
+
+	return hash;
 }
 

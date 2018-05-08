@@ -6,7 +6,7 @@
 // TODO:
 	//** unit tests for these below
 	//**
-	// quick sort
+	// quick sort (DONE?)
 	// binary search (DONE?)
 	// merge sort  (DONE?)
 	// text/int to int hash (convert strings <80 char) or ints to ints
@@ -30,6 +30,13 @@ int main()
 	vector<int> vec = {3};
 	binarySearch(vec, 2, 0, vec.size());
 
+	cout << "Hashing the string \"cheese\" : " << endl;
+	unsigned long hash = aHash("cheese");
+	cout << "After hashing: " << hash << endl;
+
+	cout << "Hashing the string \"eesche\": " << endl;
+	unsigned long hash2 = aHash("eesche");
+	cout << "After hashing: " << hash2 << endl;
 	
 	return 0;
 }
