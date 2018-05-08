@@ -240,7 +240,7 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 unsigned long aHash(string toHash)
 {
 	// initialize prime hash val
-	unsigned long hash = 5381;
+	unsigned long hash = 0;
 	// set offset 
 	unsigned long offset = 'a' - 1;
 	
@@ -248,7 +248,7 @@ unsigned long aHash(string toHash)
 	{
 		// bitshift to left by 5, add hash then bitwise OR the result 
 		// with the current string val - offset to mitigate collisions
-		hash = ((hash << 5) + hash) | (*it - offset);
+		hash = hash << 1 | (*it - offset);
 
 		// collides if 2 strings have same letters in different order:
 		// hash = ((hash << 5) + hash) + offset;

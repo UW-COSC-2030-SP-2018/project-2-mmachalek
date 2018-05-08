@@ -220,8 +220,53 @@ int main()
 	binarySearch(unordered, 3, 0, 8);
 	cout << endl;
 
-	
+	cout << "===================================Hashing===================================" << endl;
+	cout << endl;
 
+	cout << "Things better hash to the same thing twice!" << endl;
+	cout << "Hash for scoopity doop: " << aHash("scoopity doop") << endl
+	 << "	     and again: " 
+	<< aHash("scoopity doop") << endl << endl;
+
+	cout << "Test for collisions among words of the same letters (eg: cat, tac) " << endl;
+	cout << "Hash for cat: " << aHash("cat") << endl;
+	cout << "Hash for tac: " << aHash("tac") << endl;
+
+	cout << endl;
+
+	// make sure each letter has a different hash, JIC
+	cout << "Any collisions within the alphabet? (if found, listed below) " << endl << endl;
+	string alphabet = "abcdefghijklmnopqrstuvwxyz";
+	int hashArr[26] = {};
+	int i = 0;
+	for(string::const_iterator it = alphabet.begin(); it != alphabet.end(); ++it)
+	{
+		std::string expectsString( 1, *it );
+		string letter = expectsString;
+		hashArr[i] = aHash(letter);
+		i++;
+	}
+	for(int i = 0; i < 26; i++)
+	{
+		for(int j = 0; j < 26; j++)
+		{
+			if(i != j && hashArr[i] == hashArr[j])
+			{
+				cout << "COLLISION";
+				cout << "betwen: " << i << " and " << j << endl;
+			}
+			else
+			{
+				// no collision
+			}
+		}
+	}
+	cout << "(collisions within alphabet listed above --> if blank, none found)" << endl << endl;
+
+	cout << "Let's check a few more words: " << endl;
+	cout << "max: " << aHash("max") << " and axm: " << aHash("axm") << endl;
+	cout << "max: " << aHash("max") << " and Max: " << aHash("Max") << endl;
+	cout << "Xam: " << aHash("max") << " and Max: " << aHash("Max") << endl;
 	
 	return 0;
 }
