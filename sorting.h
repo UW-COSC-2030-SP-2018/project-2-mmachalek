@@ -239,7 +239,7 @@ unsigned long aHash(string toHash)
 	for(string::const_iterator it = toHash.begin(); it != toHash.end(); ++it)
 	{
 		// bitshift to left by 5, add hash then bitwise OR the result 
-		// with the current string val - offset.
+		// with the current string val - offset to mitigate collisions
 		hash = ((hash << 5) + hash) | (*it - offset);
 
 		// collides if 2 strings have same letters in different order:
