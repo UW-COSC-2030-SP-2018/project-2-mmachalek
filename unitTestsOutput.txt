@@ -1,0 +1,84 @@
+// Max Machalek
+// Project 2 
+// Data Structures and Algorithms
+// May 6th 2018
+
+// unit tests output
+
+[mmachalek@max2800 Project2]$ ./main
+
+===================================QuickSort===================================
+arr before quicksort: 9, 8, 7, 6, 5, 4, 3, 2, 1, 15, 14, 13, 12, 11, 10, 
+arr after quicksort: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
+
+what happens when try to sort empty array? 
+emptyArr before quickSort call: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+emptyArr after quickSort call: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+
+atomicArr before quickSort call: 2
+atomicArr after quickSort call: 2
+
+smallArr before quickSort call: 10, 6
+smallArr after quickSort call: 6, 10
+
+nArr before quickSort call: -1, 2, 5, 3, -3, 3, -20, 100, -1000, -12, 12, 16, 0, 18, 17, 
+nArr after quickSort call: -1000, -20, -12, -3, -1, 0, 2, 3, 3, 5, 12, 16, 17, 18, 100, 
+
+===================================MergeSort===================================
+arrM before mergeSort: 90, 80, 70, 60, 50, 40, 30, 20, 10, 150, 140, 130, 120, 110, 100, 
+arrM after mergeSort: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 
+
+what happens when try to mergeSort empty array? 
+emptyArrM before mergeSort call: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+emptyArrM after mergeSort call: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+
+atomicArrM before mergeSort call: 7
+atomicArrM after mergeSort call: 7
+
+smallArrM before mergeSort call: 11, 5
+smallArrM after mergeSort call: 5, 11
+
+nArrM before mergeSort call: -10, 26, 5, 3, -34, 3, -20, 100, -1000, -12, 190, 16, 0, 18, 17, 
+nArrM after mergeSort call: -1000, -34, -20, -12, -10, 0, 3, 3, 5, 16, 17, 18, 26, 100, 190, 
+
+===================================BinarySearch===================================
+
+Seaching for 2 in: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+Value found!
+
+Seaching for -2 in: -2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+Value found!
+
+Seaching for 20 in: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+Value not found.
+
+Seaching for -20 in: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+Value not found
+
+Search for 7 in: 1, 2, 3, 4, 5, 6, 8, 9, 10, 
+Value not found
+
+Search for -7 in: 1, 2, 3, 4, 5, 6, 8, 9, 10, 
+Value not found
+
+Search for 3 in: 1, 3, 2, 4, 5, 3, 5, 7, 10, 
+Cannot search - vector not sorted
+
+===================================Hashing===================================
+
+Things better hash to the same thing twice!
+Hash for scoopity doop: 18446744073709551550
+	     and again: 18446744073709551550
+
+Test for collisions among words of the same letters (eg: cat, tac) 
+Hash for cat: 30
+Hash for tac: 83
+
+Any collisions within the alphabet? (if found, listed below) 
+
+(collisions within alphabet listed above --> if blank, none found)
+
+Let's check a few more words: 
+max: 62 and axm: 61
+max: 62 and Max: 18446744073709551550
+Xam: 62 and Max: 18446744073709551550
