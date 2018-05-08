@@ -167,7 +167,7 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 		// return "not found"
 	if(vec.size() == 0)
 	{
-		cout << "not found - empty vector" << endl;
+		cout << "Value not found - empty vector" << endl;
 		return -9999;
 	}
 	// if vec is just 1 element long
@@ -178,12 +178,12 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 	{
 		if(vec[0] == val)
 		{
-			cout << "found!" << endl;
+			cout << "Value found!" << endl;
 			return 0;
 		}
 		else
 		{
-			cout << "not found" << endl;
+			cout << "Value not found" << endl;
 			return -9999;
 		}
 	}
@@ -195,8 +195,16 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 		// checks the first half only, to save operations
 		// hoping that if a vector is unsorted, it will show
 		// in the first half
-		cout << "vector not sorted" << endl;
+		cout << "Cannot search - vector not sorted" << endl;
 		return -9999;
+	}
+	else if(val > vec[rightmost])
+	{
+		cout << "Value not found." << endl;
+	}
+	else if(val < vec[leftmost])
+	{
+		cout << "Value not found" << endl;
 	}
 	else
 	{
@@ -204,7 +212,7 @@ int binarySearch(vector<int> vec, int val, int leftmost, int rightmost)
 		if(val == vec[midpoint])
 		{
 			// found
-			cout << "found!" << endl;
+			cout << "Value found!" << endl;
 			return midpoint;
 		}
 		else if(val < vec[midpoint])

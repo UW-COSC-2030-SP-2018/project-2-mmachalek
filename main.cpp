@@ -16,6 +16,14 @@
 	// bloom filter using STL hash
 #include"sorting.h"
 
+void printVec(vector<int> vec)
+{
+	for(int i = 0; i < vec.size(); i++)
+	{
+		cout << vec[i] << ", ";
+	}
+}
+
 int main()
 {
 	// get some space in the terminal for easier reading
@@ -153,6 +161,66 @@ int main()
 		cout << nArrM[i] << ", ";
 	}
 	cout << endl << endl;
+
+	// ** // 
+	cout << "===================================BinarySearch===================================" << endl;
+	cout << endl;
+
+	// find a number in a seemingly normal vector??
+	vector<int> vec = {1,2,3,4,5,6,7,8,9,10};
+	cout << "Seaching for 2 in: ";
+	printVec(vec);
+	cout << endl;
+	binarySearch(vec, 2, 0, 9);
+	cout << endl;
+
+	// find a negative number in a seemingly normal vector??
+	vector<int> vecN = {-2,1,2,3,4,5,6,7,8,9,10};
+	cout << "Seaching for -2 in: ";
+	printVec(vecN);
+	cout << endl;
+	binarySearch(vecN, -2, 0, 9);
+	cout << endl;
+
+	// look for a number that's too high
+	cout << "Seaching for 20 in: ";
+	printVec(vec);
+	cout << endl;
+	binarySearch(vec, 20, 0, 9);
+	cout << endl;
+
+	// look for a number that's too low
+	cout << "Seaching for -20 in: ";
+	printVec(vec);
+	cout << endl;
+	binarySearch(vec, -20, 0, 9);
+	cout << endl;
+
+
+	// look for a number that's in the range but not present
+	vector<int> vec2 = {1,2,3,4,5,6,8,9,10};
+	cout << "Search for 7 in: ";
+	printVec(vec2);
+	cout << endl;
+	binarySearch(vec2, 7, 0, 8);
+	cout << endl;
+
+	// look for a negative number that's in the range but not present
+	cout << "Search for -7 in: ";
+	printVec(vec2);
+	cout << endl;
+	binarySearch(vec2, -7, 0, 8);
+	cout << endl;
+
+	// try searching in an unordered vector:
+	vector<int> unordered = {1,3,2,4,5,3,5,7,10};
+	cout << "Search for 3 in: ";
+	printVec(unordered);
+	cout << endl;
+	binarySearch(unordered, 3, 0, 8);
+	cout << endl;
+
+	
 
 	
 	return 0;
