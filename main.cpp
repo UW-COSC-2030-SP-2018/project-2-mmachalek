@@ -4,15 +4,6 @@
 // May 6th 2018
 
 // TODO:
-	//** unit tests for these below
-	//**
-	// quick sort (DONE?)
-	// binary search (DONE?)
-	// merge sort  (DONE?)
-	// text/int to int hash (convert strings <80 char) or ints to ints
-	//**
-	//** unit tests for these above
-
 	// bloom filter using STL hash
 #include"sorting.h"
 
